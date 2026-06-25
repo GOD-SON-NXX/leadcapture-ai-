@@ -1,0 +1,47 @@
+# LeadCapture AI — .gitignore
+
+# Environment
+.env
+.env.local
+*.env
+
+# Database & data (SQLite persistent data)
+data/
+!data/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+venv/
+.venv/
+virtualenv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+!data/logs/.gitkeep
+
+# Runtime
+server.pid
+*.pid
+
+# Docker
+.dockerignore
+
+# Render
+.renderignore

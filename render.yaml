@@ -1,0 +1,64 @@
+# LeadCapture AI — Render Blueprint
+# One-click deployment configuration
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: leadcapture-ai
+    runtime: python
+    repo: https://github.com/YOUR_USERNAME/leadcapture-ai
+    plan: free
+    region: oregon
+
+    # Dockerfile deployment (recommended)
+    dockerfilePath: ./Dockerfile
+
+    # Environment variables
+    envVars:
+      - key: APP_NAME
+        value: LeadCapture AI
+      - key: APP_URL
+        value: https://leadcapture-ai.onrender.com
+      - key: PORT
+        value: "8000"
+      - key: DATABASE_PATH
+        value: /data/leadcapture.db
+      - key: LOG_LEVEL
+        value: INFO
+      - key: LOG_FILE
+        value: /data/logs/app.log
+      - key: ADMIN_PASSWORD
+        value: admin123
+      - key: MONTHLY_PRICE
+        value: "97"
+      - key: MONTHLY_PRICE_CURRENCY
+        value: USD
+      # You'll add these after setting up accounts:
+      # - key: OPENAI_API_KEY
+      #   value: sk-your-key
+      # - key: GOOGLE_PLACES_API_KEY
+      #   value: your-key
+      # - key: RESEND_API_KEY
+      #   value: re_your-key
+      # - key: EMAIL_FROM
+      #   value: LeadCapture AI <noreply@yourdomain.com>
+      # - key: WISE_ACCOUNT_NAME
+      #   value: Your Business
+      # - key: WISE_ACCOUNT_NUMBER
+      #   value: "123456789"
+      # - key: WISE_ROUTING_NUMBER
+      #   value: "987654321"
+      # - key: WISE_EMAIL
+      #   value: payments@yourbusiness.com
+
+    # Persistent disk for SQLite (critical — prevents data loss on restart)
+    disk:
+      name: leadcapture-data
+      mountPath: /data
+      sizeGB: 1
+
+    # Health check
+    healthCheckPath: /health
+
+    # Auto-deploy on git push
+    autoDeploy: true

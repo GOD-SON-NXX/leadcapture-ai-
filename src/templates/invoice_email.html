@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Payment Invoice</title>
+</head>
+<body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+    <div style="text-align: center; margin-bottom: 30px;">
+        <h1 style="color: #2563eb;">LeadCapture AI</h1>
+        <p>Invoice for <strong>{{business_name}}</strong></p>
+    </div>
+
+    <p>Hi {{owner_name}},</p>
+    <p>Thank you for using LeadCapture AI! Here's your payment details:</p>
+
+    <div style="background: #f8fafc; border-radius: 12px; padding: 25px; margin: 20px 0;">
+        <h3 style="margin-top: 0;">💲 Amount Due: <strong style="color: #2563eb;">${{amount}}/month</strong></h3>
+
+        <h4>Payment via Wise:</h4>
+        <p><strong>Account Name:</strong> {{wise_account_name}}</p>
+        <p><strong>Account Number:</strong> {{wise_account_number}}</p>
+        <p><strong>Routing Number:</strong> {{wise_routing_number}}</p>
+        <p><strong>Email:</strong> {{wise_email}}</p>
+        <p style="margin-top: 15px;"><em>Reference: Please include your business name so we can match the payment.</em></p>
+    </div>
+
+    <div style="background: #fef2f2; border-radius: 8px; padding: 15px; margin: 20px 0;">
+        <p style="margin: 0; color: #dc2626;">
+            ⏰ Please send payment before your trial ends. You have a 3-day grace period after the due date.
+        </p>
+    </div>
+
+    <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;">
+    <p style="color: #94a3b8; font-size: 12px; text-align: center;">
+        LeadCapture AI — Automated Lead Capture for Local Service Businesses
+    </p>
+</body>
+</html>
